@@ -3,6 +3,7 @@ package com.example.numad21fa_jeannillehiciano;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,8 +17,11 @@ public class MainActivity extends AppCompatActivity {
     /** Called when the user touches About Me button */
 
     public void toastNameInfo(View view) {
+//        Make a standard toast that just contains text.
         Toast toast = Toast.makeText(this, "Jeannille Hiciano, hiciano.j@northeastern.edu", Toast.LENGTH_LONG);
         toast.show();
+
+//        TextView txtView = findViewById(R.id.textView)
     }
 
 
