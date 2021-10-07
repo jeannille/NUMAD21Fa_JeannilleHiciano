@@ -10,7 +10,7 @@
         android:id="@+id/aboutMeText"
         android:layout_width="253dp"
         android:layout_height="38dp"
-        android:text="Jeannille Hiciano"
+        android:text="@string/about_jeannille"
         android:textColor="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
