@@ -17,6 +17,8 @@ public class GridButtonActivity extends AppCompatActivity {
 
     public void onClickGrid(View view){
 //        case for each view (whatever being clicked on) being attached
+//        Toast.makeText(getApplicationContext(), "Original onClick", Toast.LENGTH_SHORT).show();
+//        TextView clickyText = findViewById(R.id.aboutMeText);
 
         switch (view.getId()){
             case R.id.aboutButton:
@@ -27,7 +29,31 @@ public class GridButtonActivity extends AppCompatActivity {
                 TextView clickyMsg = findViewById(R.id.aboutMeText);
                 clickyMsg.setText("modified text");
                 break;
+            case R.id.button_a:
+                TextView clickyMsg2 = findViewById(R.id.pressedText);
+                clickyMsg2.setText("Pressed: A");
+                break;
+            case R.id.button_b:
+                TextView clickyMsgB = findViewById(R.id.pressedText);
+                clickyMsgB.setText("Pressed: B");
+                break;
+            case R.id.button_c:
+                TextView clickyMsgC = findViewById(R.id.pressedText);
+                clickyMsgC.setText("Pressed: C");
+                break;
 
+            case R.id.button_d:
+                TextView clickyMsgD = findViewById(R.id.pressedText);
+                clickyMsgD.setText("Pressed: D");
+                break;
+            case R.id.button_e:
+                TextView clickyMsgE = findViewById(R.id.pressedText);
+                clickyMsgE.setText("Pressed: E");
+                break;
+            case R.id.button_f:
+                TextView clickyMsgF = findViewById(R.id.pressedText);
+                clickyMsgF.setText("Pressed: F");
+                break;
 
         }
     }
