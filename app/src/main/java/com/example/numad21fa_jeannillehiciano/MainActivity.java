@@ -1,9 +1,10 @@
 package com.example.numad21fa_jeannillehiciano;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,21 +18,30 @@ public class MainActivity extends AppCompatActivity {
 
     /** Called when the user touches About Me button */
 
-//    public void toastNameInfo(View view) {
-//        Toast toast = Toast.makeText(this, "Jeannille Hiciano, hiciano.j@northeastern.edu", Toast.LENGTH_LONG);
-//        toast.show();
-//    }
+    public void startAboutMeActivity(){
+        Intent intent = new Intent(this, AboutMe.class);
+        startActivity(intent);
+    }
+
+    public void startGridActivity(){
+        Intent intent = new Intent(this, GridButtonActivity.class);
+        startActivity(intent);
+    }
 
     public void onClick(View view){
 //        case for each view (whatever being clicked on) being attached
 
         switch (view.getId()){
             case R.id.aboutButton:
-                Toast.makeText(getApplicationContext(), "Jeannille H, hiciano.j", Toast.LENGTH_SHORT).show();
+                startAboutMeActivity();
+//                Toast.makeText(getApplicationContext(), "Jeannille H, hiciano.j", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.clickyButton:
-                Toast.makeText(getApplicationContext(), "Pressed clicky", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), "Pressed clicky", Toast.LENGTH_SHORT).show();
+                startGridActivity();
                 break;
+
+
 
         }
     }
