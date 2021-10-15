@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //do same thing here for activity opened by link collector button
+
     public void onClick(View view){
 //        case for each view (whatever being clicked on) being attached
 
@@ -40,7 +42,10 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(getApplicationContext(), "Pressed clicky", Toast.LENGTH_SHORT).show();
                 startGridActivity();
                 break;
+            case R.id.linkButton:
 
+                Toast.makeText(getApplicationContext(), "Pressed LINK COLLECTOR", Toast.LENGTH_SHORT).show();
+                break;
 
 
         }
