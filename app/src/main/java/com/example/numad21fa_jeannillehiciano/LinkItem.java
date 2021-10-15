@@ -1,13 +1,12 @@
 package com.example.numad21fa_jeannillehiciano;
 
-//Represents one link item (view) in list of links (contained by RecyclerViewHolder)
+//Represents one link (view) in full list of links (contained by ListOfLinksActivity/RecyclerViewHolder)
 public class LinkItem implements LinkClickListener {
     private final String textLink; //can't modify existing link or url
     private final String urlLink;
     private boolean isChecked;
 
-    //Constructor
-    //each link in list has display text, the url, and status if checked
+    //Constructor - each link in list has display text, the url, and status if checked
     public LinkItem(String textLink, String urlLink, boolean isChecked) {
         this.textLink = textLink;
         this.urlLink = urlLink;

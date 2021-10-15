@@ -28,6 +28,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //connect RecyclerView (List of Links) activity when this method is called
+    public void startListOfLinksActivity(){
+        Intent intent = new Intent(this, ListOfLinksActivity.class);
+        startActivity(intent);
+    }
+
     //do same thing here for activity opened by link collector button
 
     public void onClick(View view){
@@ -43,10 +49,9 @@ public class MainActivity extends AppCompatActivity {
                 startGridActivity();
                 break;
             case R.id.linkButton:
-
-                Toast.makeText(getApplicationContext(), "Pressed LINK COLLECTOR", Toast.LENGTH_SHORT).show();
+//               Toast.makeText(getApplicationContext(), "Pressed LINK COLLECTOR", Toast.LENGTH_SHORT).show();
+                startListOfLinksActivity();
                 break;
-
 
         }
     }
