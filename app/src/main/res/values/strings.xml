@@ -10,4 +10,6 @@
     <string name="e">E</string>
     <string name="f">F</string>
     <string name="link_collector">Link Collector</string>
+    <string name="link_item">Link Item Placeholder</string>
+    <string name="add_button">Add New Link</string>
 </resources>

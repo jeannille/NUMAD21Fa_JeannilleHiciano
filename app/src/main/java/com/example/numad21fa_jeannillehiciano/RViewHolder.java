@@ -3,8 +3,8 @@ package com.example.numad21fa_jeannillehiciano;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-
-public class ListOfLinksActivity extends AppCompatActivity {
+//RViewHolder
+public class RViewHolder extends AppCompatActivity {
     //activity (RAdapter) that makes list of lists (LinkItem objects)
     //list is brought up by Link Collector button in main activity
 
