@@ -33,6 +33,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //when get location button is clicked, location activity will open
+    public void startLocationActivity(){
+        Intent intentLocation = new Intent(this, LocationActivity.class);
+        startActivity(intentLocation);
+    }
+
     //do same thing here for activity opened by link collector button
 
     public void onClick(View view){
@@ -50,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.linkButton:
 //               Toast.makeText(getApplicationContext(), "Pressed LINK COLLECTOR", Toast.LENGTH_SHORT).show();
                 startListOfLinksActivity();
+                break;
+            case R.id.locationButton:
+                startLocationActivity();
                 break;
 
         }
