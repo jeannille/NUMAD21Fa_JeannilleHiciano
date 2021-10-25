@@ -13,4 +13,9 @@
     <string name="link_item">Link Item Placeholder</string>
     <string name="add_button">Add New Link</string>
     <string name="location_button">Get Location</string>
+    <string name="longitude">Longitude</string>
+    <string name="templat">tempLat</string>
+    <string name="templong">tempLong</string>
+    <string name="lattitude">Lattitude:</string>
+    <string name="denied_permissions">Error - no permissions to get long/late,.</string>
 </resources>
