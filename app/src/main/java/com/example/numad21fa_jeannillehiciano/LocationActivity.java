@@ -85,8 +85,9 @@ public class LocationActivity extends AppCompatActivity {
                         if (location == null) {
                             requestNewLocation();
                         } else {
-                            latitudeText.setText(location.getLatitude() + "");
-                            longitudeText.setText(location.getLongitude() + "");
+                            //cast long and lat values to string
+                            latitudeText.setText( String.valueOf(location.getLatitude()));
+                            longitudeText.setText(String.valueOf(location.getLongitude()));
                         }
                     }
                 });
