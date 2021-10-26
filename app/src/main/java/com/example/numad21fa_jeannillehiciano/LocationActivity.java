@@ -34,7 +34,6 @@ public class LocationActivity extends AppCompatActivity {
 
     private FusedLocationProviderClient fusedLocationClient;
     TextView latitudeText, longitudeText;
-    int PERMISSION_ID = 44;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +41,11 @@ public class LocationActivity extends AppCompatActivity {
         setContentView(R.layout.activity_location);
 
         //need set long/lat every time location activity is created
+        latitudeText = findViewById(R.id.latValue);
+        longitudeText = findViewById(R.id.longValue);
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+
+        getLastLocation();
 
     }
 
