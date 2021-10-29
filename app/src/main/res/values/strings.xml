@@ -18,5 +18,6 @@
     <string name="templong">tempLong</string>
     <string name="lattitude">Latitude:</string>
     <string name="denied_permissions">Error - no permissions to get long/late,.</string>
-    <string name="webService">Web Service</string>
+    <string name="webServiceButton">Web Service</string>
+    <string name="activityWebServiceText">Have reached the Web Service Activity</string>
 </resources>

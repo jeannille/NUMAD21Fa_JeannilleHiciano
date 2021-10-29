@@ -39,6 +39,12 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentLocation);
     }
 
+    public void startWebServiceActivity(){
+        Intent webIntent = new Intent(this, WebService.class);
+        startActivity(webIntent);
+
+    }
+
     //do same thing here for activity opened by link collector button
 
     public void onClick(View view){
@@ -59,6 +65,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.locationButton:
                 startLocationActivity();
+                break;
+            case R.id.webServiceButton:
+                startWebServiceActivity();
                 break;
 
         }
