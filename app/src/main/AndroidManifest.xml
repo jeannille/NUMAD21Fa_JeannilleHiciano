@@ -16,6 +16,9 @@
         android:theme="@style/Theme.NUMAD21Fa_JeannilleHiciano"
         tools:ignore="ExtraText">
         <activity
+            android:name=".WebViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".WebService"
             android:exported="true" />
         <activity
