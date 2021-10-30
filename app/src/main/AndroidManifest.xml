@@ -7,8 +7,11 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
-<!-- A6 - request INTERNET permission for access to internet-->
+
+<!-- https://developer.android.com/training/basics/network-ops/connecting -->
+<!-- A6 - request INTERNET permission for access to internet -->
     <uses-permission android:name="android.permission.INTERNET"/>
+<!--  request permission to perform network operations in app -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
