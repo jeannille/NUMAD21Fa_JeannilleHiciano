@@ -5,11 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 // https://developer.android.com/training/basics/network-ops/managing.html
-// checks network connection, user preferences
+// Checks what type of Network connection the user has (cellular, wifi) in order to specify which
+// activity is best to implement at given time
 public class NetworkActivity extends AppCompatActivity {
+//    class keeps track of network connectivity
 
-
-//    BroadcastReceiver
+    //private NetworkReceiver receiver = new NetworkReceiver();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

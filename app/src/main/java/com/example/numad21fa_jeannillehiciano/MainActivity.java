@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+//when an app is compiled a class called R is created, representing the app
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

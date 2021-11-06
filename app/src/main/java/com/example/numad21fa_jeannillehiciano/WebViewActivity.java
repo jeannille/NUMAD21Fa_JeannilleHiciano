@@ -31,8 +31,9 @@ public class WebViewActivity extends AppCompatActivity {
         mWebView = findViewById(R.id.webView);
         mWebDestEditText = findViewById(R.id.webview_edit_text);
 
-        // Setting the WebViewClient to allow the WebView to handle the
-        // redirects within the WebView, as opposed to being launched in a browser.
+        // Setting the WebViewClient to allow the WebView to override handling the
+        // redirects, as opposed to being redirected/launched in the browser
+        //avoid sending user outside of the app
 
         mWebView.setWebViewClient(new WebViewClient() {
 
@@ -47,11 +48,12 @@ public class WebViewActivity extends AppCompatActivity {
 
 
     //gets called when user clicks button
+    //tell webView set its setting so JS is enabled, we enable false for security holes
     public void loadWebsite(View view){
         //tells the WwebView so JavaScipt is enabled
         //may have to set this to false (because of reasons beyond this class)
         mWebView.getSettings().setJavaScriptEnabled(false);
-        //gets the text that the user input
+        //tell webView to loadURL by getting the text input from user (url)
         mWebView.loadUrl(mWebDestEditText.getText().toString());
     }
 }
