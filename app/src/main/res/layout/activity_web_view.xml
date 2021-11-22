@@ -7,12 +7,12 @@
     tools:context=".WebViewActivity">
 
 
-<!--    add a WebView to app in the webview layout-->
+    <!--    add a WebView to app in the webview layout-->
 
     <WebView
         android:id="@+id/webView"
-        android:layout_width="370dp"
-        android:layout_height="592dp"
+        android:layout_width="343dp"
+        android:layout_height="552dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -20,27 +20,32 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <!--        android:hint="Search Movie"-->
+
     <EditText
         android:id="@+id/webview_edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="243dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="668dp"
         android:ems="10"
-        android:text="http://www.northeastern.edu/"
         android:inputType="text"
+        android:text="https://www.northeastern.edu/"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintVertical_bias="0.384" />
-    <!--        android:hint="Search Movie"-->
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/web_dest_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="664dp"
+        android:backgroundTint="#009688"
         android:onClick="loadWebsite"
         android:text="Load Website"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

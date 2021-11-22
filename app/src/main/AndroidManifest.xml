@@ -5,11 +5,9 @@
     <!-- A5 allow location -->
     <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- https://developer.android.com/training/basics/network-ops/connecting -->
-    <!-- A6 - request INTERNET permission for app to open network sockets-->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!-- request permission to perform network operations in app -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- https://developer.android.com/training/basics/network-ops/connecting -->
+    <!-- A6 - request INTERNET permission for app to open network sockets -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- request permission to perform network operations in app -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
@@ -19,15 +17,14 @@
         android:roundIcon="@mipmap/ic_launcher_jh_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD21Fa_JeannilleHiciano"
+        android:requestLegacyExternalStorage="true"
         tools:ignore="ExtraText">
-        <activity
-            android:name=".NetworkActivity"
-            android:exported="true" />
+
         <activity
             android:name=".WebViewActivity"
             android:exported="true" />
         <activity
-            android:name=".WebService"
+            android:name=".WebServiceActivity"
             android:exported="true" />
         <activity
             android:name=".LocationActivity"

@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startWebServiceActivity(){
-        Intent webIntent = new Intent(this, WebService.class);
+        Intent webIntent = new Intent(this, WebServiceActivity.class);
         startActivity(webIntent);
 
     }
@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             case R.id.webServiceButton:
                 startWebServiceActivity();
                 break;
+
 
         }
     }

@@ -20,4 +20,5 @@
     <string name="denied_permissions">Error - no permissions to get long/late,.</string>
     <string name="webServiceButton">Web Service</string>
     <string name="activityWebServiceText">Have reached the Web Service Activity</string>
+    <string name = "launchWebView"> Launch Web View pg.</string>
 </resources>
