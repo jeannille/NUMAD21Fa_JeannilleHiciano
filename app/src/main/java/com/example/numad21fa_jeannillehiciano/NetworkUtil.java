@@ -37,6 +37,7 @@ public final class NetworkUtil {
         throw new MyException("Invalid Input");
     }
 
+    //Java's stream api and string builder
     public static String convertStreamToString(InputStream inputStream){
         StringBuilder stringBuilder=new StringBuilder();
         try {
@@ -54,14 +55,19 @@ public final class NetworkUtil {
     }
 
     public static String httpResponse(URL url) throws IOException {
+        //open a connection
         HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        //method of request is GET
         conn.setRequestMethod("GET");
+        //DoInput means retrieveing from server where output would outputting to server
         conn.setDoInput(true);
 
+        //tell connection to connection
         conn.connect();
 
         // Read response.
         InputStream inputStream = conn.getInputStream();
+        //helper function to convert Java Stream into String
         String resp = NetworkUtil.convertStreamToString(inputStream);
 
         return resp;

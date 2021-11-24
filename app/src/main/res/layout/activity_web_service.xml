@@ -13,8 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/URL_editText"
-        android:text="https://jsonplaceholder.typicode.com/posts/1"/>
+        android:text="Bridget Jones"/>
 
+    <!--    android:text="https://jsonplaceholder.typicode.com/posts/1"-->
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
