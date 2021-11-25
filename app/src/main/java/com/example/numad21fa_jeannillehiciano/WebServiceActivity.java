@@ -1,10 +1,15 @@
 package com.example.numad21fa_jeannillehiciano;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,6 +30,8 @@ public class WebServiceActivity extends AppCompatActivity {
 
     private EditText mURLEditText;
     private TextView mTitleTextView;
+    private WebView mWebView; //movie poster placeholder, could not figure out imageView
+
 
     private static final String TAG = "WebServiceActivity";
 
@@ -37,8 +44,25 @@ public class WebServiceActivity extends AppCompatActivity {
         //the edit text box taking in URL (temporary, should beuser data input sent to web serv)
         mURLEditText = (EditText)findViewById(R.id.URL_editText);
         //textbox where result will be displayed (title of json obj in example)
-        //will change to a webview object for Tumblr posts
         mTitleTextView = (TextView)findViewById(R.id.result_textview);
+        mWebView = (WebView)findViewById(R.id.webView2);
+
+        mWebView.setWebViewClient(new WebViewClient(){
+            // Api < 24
+            // Deprecated in API 24, but the alternative is not compatible with Android <19
+            @Override
+            public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                view.loadUrl(url);
+                return true;
+            }
+            // Api > 24
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
+                String url = request.getUrl().toString();
+                view.loadUrl(url);
+                return true;
+            }
+        });
     }
 
     public void callWebserviceButtonHandler(View view) {
@@ -46,18 +70,35 @@ public class WebServiceActivity extends AppCompatActivity {
         try {
             //get & save url user has entered in textbox, make sure its valid
             String rawInput = mURLEditText.getText().toString();
-            //will edit to append query string
+            //remove leading & trailing spaces plus any multiple spacing then replaces spaces with + for query
+            String userInput = rawInput.trim().replaceAll(" +", " ");
+            String queryString = userInput.replace(" ", "+");
+//            Log.i("---------------------------------------------- input test", queryString);
 
+
+            //append user's input as query to api that includes my API key, eg. 'Bridget Jones' -> Bridget+Jones
+            String url = NetworkUtil.validInput("https://www.omdbapi.com/?apikey=21a5afff&s=" + queryString);
             //hardcoded test for bridget jones, success
-            String url = NetworkUtil.validInput("https://www.omdbapi.com/?apikey=21a5afff&s=Bridget+Jones");
-            //append user's input as query to api that includes my API key
-
+//            String url = NetworkUtil.validInput("https://www.omdbapi.com/?apikey=21a5afff&s=Bridget+Jones");
+            //results for a specific movie given its unique imdb #
 //            String url2 = NetworkUtil.validInput("https://www.omdbapi.com/?i=tt3896198&apikey=21a5afff");
 
             task.execute(url); // This is a security risk.  Don't let your user enter the URL in a real app.
         } catch (NetworkUtil.MyException e) {
             //show user exception if caught
             Toast.makeText(getApplication(), e.toString(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+    //validated json obj return poster string and loads image
+    public void loadWebsite(View view, String moviePoster){
+        String url = moviePoster.trim();
+        try {
+            url = NetworkUtil.validInput(url);
+            mWebView.loadUrl(url);
+        } catch (NetworkUtil.MyException e) {
+            Toast.makeText(getApplication(),e.toString(),Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -88,14 +129,17 @@ public class WebServiceActivity extends AppCompatActivity {
 
                 // JSONArray jArray = new JSONArray(resp);    // Use this if your web service returns an array of objects.  Arrays are in [ ] brackets.
                 // Transform String into JSONObject
-                jObject = new JSONObject(resp);
+//                jObject = new JSONObject(resp);
+
                 //url returns JSONArray, grab second element which is another array of search results
                 JSONArray jArray = (JSONArray) jObject.get("Search");
+                //return top 3 results as test and let user select
 
                 //print to log every title in the results list
                 for (int i = 0; i < jArray.length(); i++){
                     Log.i("Title" , jArray.getJSONObject(i).getString("Title"));
                 }
+                jObject = jArray.getJSONObject(0);
 
                 //Log.i("jTitle",jObject.getString("title"));
                 //Log.i("jBody",jObject.getString("body"));
@@ -116,7 +160,6 @@ public class WebServiceActivity extends AppCompatActivity {
                 Log.e(TAG,"JSONException");
                 e.printStackTrace();
             }
-
             return jObject;
 
         }
@@ -129,10 +172,9 @@ public class WebServiceActivity extends AppCompatActivity {
 
             //put response inf result_view textbox
             try {
-//                String jResults = jObject.getString("totalResults");
-//                String jResponse = jObject.getString("Responses");
-//                result_view.setText("Results: " + jResults + " jResponse: " + jResponse );
-                result_view.setText(jObject.getString("totalResults"));
+                result_view.setText("Title: " + jObject.getString("Title")
+                        + "\n Year: "+ jObject.getString("Year"));
+                loadWebsite(mWebView, jObject.getString("Poster"));
 //                result_view.setText(jObject.getString("Plot"));
             } catch (JSONException e) {
                 result_view.setText("Something went wrong!");
