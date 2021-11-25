@@ -14,32 +14,10 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_jh"
         android:label="NUMAD21Fa_JeannilleHiciano"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_jh_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.NUMAD21Fa_JeannilleHiciano"
-        android:requestLegacyExternalStorage="true"
-        tools:ignore="ExtraText">
-
-        <activity
-            android:name=".WebViewActivity"
-            android:exported="true" />
-        <activity
-            android:name=".WebServiceActivity"
-            android:exported="true" />
-        <activity
-            android:name=".LocationActivity"
-            android:exported="true" />
-        <activity
-            android:name=".RViewHolder"
-            android:configChanges="orientation|screenSize"
-            android:exported="true" />
-        <activity
-            android:name=".AboutMe"
-            android:exported="true" />
-        <activity
-            android:name=".GridButtonActivity"
-            android:configChanges="orientation|screenSize"
-            android:exported="true" />
+        android:theme="@style/Theme.NUMAD21Fa_JeannilleHiciano">
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -49,6 +27,27 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".WebViewActivity"
+            android:exported="true" />
+        <activity
+            android:name=".WebServiceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true" />
+        <activity
+            android:name=".LocationActivity"
+            android:exported="true" />
+        <activity
+            android:name=".RViewHolder"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:exported="true" />
+        <activity
+            android:name=".AboutMe"
+            android:exported="true" />
+        <activity
+            android:name=".GridButtonActivity"
+            android:configChanges="orientation|screenSize"
+            android:exported="true" />
     </application>
 
 </manifest>

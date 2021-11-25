@@ -71,8 +71,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.webServiceButton:
                 startWebServiceActivity();
                 break;
-
-
+                //testing due to issue w/ retrieving JSON now :/
+//            case R.id.testButtonWeb:
+//                startActivity(new Intent(MainActivity.this, TESTActivity.class));
+//                break;
         }
     }
 

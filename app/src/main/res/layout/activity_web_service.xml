@@ -8,34 +8,50 @@
     android:orientation="vertical"
     tools:context=".WebServiceActivity">
 
-
-    <EditText
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/URL_editText"
-        android:text="Bridget Jones"/>
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
 
-    <!--    android:text="https://jsonplaceholder.typicode.com/posts/1"-->
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Ping Web Service"
-        android:onClick="callWebserviceButtonHandler"/>
+            <EditText
+                android:id="@+id/URL_editText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Juno" />
 
-    <TextView
-        android:id="@+id/result_textview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:singleLine="false"
-        android:text="" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#4F0B51"
+                android:onClick="callWebserviceButtonHandler"
+                android:text="Ping Web Service"
+                android:textColor="#FFFFFF" />
 
-    <WebView
-        android:id="@+id/webView2"
-        android:layout_width="355dp"
-        android:layout_height="534dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginRight="20dp" />
+            <TextView
+                android:id="@+id/result_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="4sp"
+                android:singleLine="false"
+                android:text=""
+                android:textColor="#081F50"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/webServiceImage"
+                android:layout_width="320dp"
+                android:layout_height="498dp"
+                android:layout_gravity="center|center_horizontal|center_vertical"
+                android:layout_marginTop="20dp"
+
+                android:layout_marginBottom="20dp"
+                android:isScrollContainer="true" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

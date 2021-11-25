@@ -25,7 +25,7 @@ public final class NetworkUtil {
         }
     }
 
-    //checks to see of the url input is valid URL formst
+    //checks to see of the url input is valid URL format
     public static String validInput(String url) throws MyException {
         if (Patterns.WEB_URL.matcher(url).matches() || URLUtil.isValidUrl(url)) {
             if(!(url.startsWith("https://")||url.startsWith("http://"))){
